@@ -9,7 +9,7 @@ calculaPerimetroCirculo:: Float -> Float
 -}
 
 calculaPerimetroCirculo:: Float -> Float
-calculaPerimetroCirculo diametro = (diametro * pi)
+calculaPerimetroCirculo diametro = 2 * (pi) * (diametro/2)
 
 -- Ejemplo de uso:
 -- calculaPerimetroCirculo 1 devuelve 3.15...
@@ -25,6 +25,16 @@ calculaAreaCirculo diametro = (diametro / 2) ^ 2 * (pi)
 
 -- Ejemplo de uso:
 -- calculaAreaCirculo 1 devuelve 0.7875
+
+{-
+3. Utilizando ambas funciones y la siguiente firma, elabora una funcion que calcule el area de un cilindro de altura h.
+
+calculaAreaCilindro:: Float -> Float -> Float
+-}
+
+calculaAreaCilindro:: Float -> Float -> Float
+calculaAreaCilindro diametro altura = (calculaPerimetroCirculo(diametro) + (2 * (calculaAreaCirculo(diametro))) * altura)
+
 
 {-
 4. Dado b la base y a la altura de un triángulo, calcular su  área.
