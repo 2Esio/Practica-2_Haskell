@@ -35,6 +35,9 @@ calculaAreaCilindro:: Float -> Float -> Float
 calculaAreaCilindro:: Float -> Float -> Float
 calculaAreaCilindro diametro altura = (calculaPerimetroCirculo(diametro) + (2 * (calculaAreaCirculo(diametro))) * altura)
 
+-- Ejemplo de uso:
+-- calculaAreaCilindro 2 4 devuelce 32.1...
+
 
 {-
 4. Dado b la base y a la altura de un triángulo, calcular su  área.
@@ -47,6 +50,36 @@ calcularAreaTriangulo base altura = (base * altura) / 2
 -- Ejemplo de uso:
 -- calcularAreaTriangulo 5 3 devuelve 7.5
 
+{-
+5. Calcula el area de un poligono regular dado, su número de lados, base y altura o apotema
+
+calcularArea:: Int -> Float -> Float -> Float
+-}
+
+calcularArea:: Int -> Float -> Float -> Float 
+calcularArea lados longitud apotema | lados <= 3 || apotema <= 0 = -1
+                                    | otherwise = 0.5 * fromIntegral lados * longitud * apotema
+
+{-
+6. Utilizando la función anterior calcula el  ́volumen de una pirámide de altura h:
+
+calcularVolumen :: Float -> Float -> Float-> Float
+-}
+
+calcularVolumen :: Float -> Float -> Float -> Float
+calcularVolumen base altura h = (base * altura * h) / 3
+
+-- Ejemplo de uso:
+-- calcularVolumen 5 5 6 devuelve 50
+
+{-
+7. Utilizando la funcion calculaArea, calcula el area de un prisma cuya cara puede conformarse de cualquier poligono regular, dada una altura h, lado l y números de lado n. 
+
+calcularAreaPoligonoRegular:: Int -> Float -> Float -> Float 
+-}
+
+calcularAreaPoligonoRegular:: Int -> Float -> Float -> Float -> Float
+calcularAreaPoligonoRegular lados longitud altura apotema = (2 * (calcularArea lados longitud apotema) + (fromIntegral lados * longitud) * (altura))  
 
 {-
 8. Dado el siguiente Input, Output y la siguiente definición en Haskell completa el método mágico
